@@ -48,20 +48,6 @@ public class VendingMachineImplementation implements VendingMachine {
         this.products = products;
     }
 
-    @Override
-    public void addCurrency(int amount) {
-        if (amount > 0) {
-            for (int i = denominations.length - 1; i > 0; i--) {
-                if (amount < denominations[i]) {
-                    //System.out.println("DEBUG: Bill provided was not even with the denominations.");
-                } else if (amount % denominations[i] == 0) {
-                    depositPool = amount;
-                }
-            }
-        } else {
-            System.out.println("You can't add 0 or less.");
-        }
-    }
 
     @Override
     public int endSession() {

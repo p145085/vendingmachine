@@ -49,8 +49,9 @@ public class App {
                     break;
                 case 4:
                     System.out.println("Which produce would you like to purchase?");
-                    int product = user.nextInt();
-                    app.vendingMachine.request(product);
+                    int value = user.nextInt();
+                    Product product = app.vendingMachine.request(value);
+                    System.out.println("You receive " + product.getProductName());
                     break;
                 case 5:
                     System.out.println("Your balance is " + app.vendingMachine.getBalance());
