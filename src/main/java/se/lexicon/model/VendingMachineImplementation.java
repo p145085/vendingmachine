@@ -5,6 +5,45 @@ public class VendingMachineImplementation implements VendingMachine {
     int depositPool;
     int[] denominations = {1, 2, 5, 10, 20, 50, 100, 200, 500, 1000};
 
+    //TO-DO: ENUM
+    public enum denominations_SEK {
+        SEK_1000(1000),
+        SEK_500(500),
+        SEK_200(200),
+        SEK_100(100),
+        SEK_50(50),
+        SEK_20(20),
+        SEK_10(10),
+        SEK_5(5),
+        SEK_2(2),
+        SEK_1(1);
+
+        private final int value;
+
+        denominations_SEK(int value) {
+            this.value = value;
+        }
+
+        public int getValue() {
+            return value;
+        }
+    }
+
+    @Override
+    public void addCurrency(int amount) {
+        if (amount > 0) {
+            for (denominations_SEK denomination : denominations_SEK.values()) {
+                if (amount < denomination.value) {
+                    System.out.println("nope");
+                } else if (amount % denomination.value == 0) {
+                    depositPool = amount;
+                }
+            }
+        } else {
+            System.out.println("You can't add 0 or less.");
+        }
+    }
+
     public VendingMachineImplementation(Product[] products) {
         this.products = products;
     }
