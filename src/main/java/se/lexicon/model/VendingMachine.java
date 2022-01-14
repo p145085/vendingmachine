@@ -9,7 +9,7 @@ public interface VendingMachine {
 
     public int endSession();
 
-    public String getDescription(int id);
+    String getDescription(int id);
 
     public String[] getProducts();
 
