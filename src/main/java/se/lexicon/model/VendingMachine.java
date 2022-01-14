@@ -1,16 +1,16 @@
 package se.lexicon.model;
 
 public interface VendingMachine {
-    public void addCurrency(int amount);
+    void addCurrency(int amount);
 
-    public int getBalance();
+    int getBalance();
 
-    public Product request(int id);
+    Product request(int id);
 
-    public int endSession();
+    int endSession();
 
     String getDescription(int id);
 
-    public String[] getProducts();
+    String[] getProducts();
 
 }
